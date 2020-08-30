@@ -1,6 +1,17 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+const { runInNewContext } = require('vm');
 
+app.get('/', (req, res) => {
+  res.status(200);
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+app.get('/about', (req, res) => {
+  res.status(200);
+  res.sendFile(path.join(__dirname, 'views', 'about.html'));
+});
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
