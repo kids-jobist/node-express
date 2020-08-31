@@ -6,6 +6,8 @@ const homeRoutes = require('./routes/home');
 const coursesRoutes = require('./routes/courses');
 const addRoutes = require('./routes/add');
 
+const Course = require('./models/course');
+
 const hbs = exphbs.create({
   defaultLayout: 'main',
   extname: 'hbs',
