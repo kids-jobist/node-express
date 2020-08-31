@@ -12,6 +12,7 @@ const hbs = exphbs.create({
 });
 
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/', homeRoutes);
 app.use('/courses', coursesRoutes);
