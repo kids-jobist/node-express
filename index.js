@@ -14,15 +14,24 @@ app.set('view engine', 'hbs');
 app.set('views', 'views');
 
 app.get('/', (req, res) => {
-  res.render('index');
-});
-
-app.get('/add', (req, res) => {
-  res.render('add');
+  res.render('index', {
+    title: 'Главная страница',
+    isHome: true,
+  });
 });
 
 app.get('/courses', (req, res) => {
-  res.render('courses');
+  res.render('courses', {
+    title: 'Список курсов',
+    isCourses: true,
+  });
+});
+
+app.get('/add', (req, res) => {
+  res.render('add', {
+    title: 'Добавить новый курс',
+    isAdd: true,
+  });
 });
 
 const PORT = process.env.PORT || 3000;
